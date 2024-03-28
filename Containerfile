@@ -9,7 +9,7 @@ RUN pip install matplotlib \
     numpy \
     pandas \
     seaborn \
-    sklearn
+    scikit-learn
 
 
 ENV TZ America/Los_Angeles
