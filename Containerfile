@@ -4,6 +4,13 @@ LABEL maintainer="LSIT Systems <lsitops@ucsb.edu>"
 
 USER root
 
+RUN pip install matplotlib \
+    pyplots \
+    numpy \
+    pandas \
+    pickle \
+    seaborn \
+    sklearn
 
 
 ENV TZ America/Los_Angeles
