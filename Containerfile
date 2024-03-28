@@ -8,7 +8,6 @@ RUN pip install matplotlib \
     pyplots \
     numpy \
     pandas \
-    pickle \
     seaborn \
     sklearn
 
