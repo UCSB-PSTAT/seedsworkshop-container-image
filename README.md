@@ -1,9 +1,3 @@
-# Container image source for <course>
-Info here about where to find and run this image.
+# A Jupyter single user Image to support the work for the Student Engagement and Enrichment in Data Science workshops. (SEEDS)
 
-# Template instructions (**DELETE THIS SECTION**)
-
-* Uncomment and add necessary libraries to Containerfile
-* mv Jenkinsfile.template to Jenkinsfile
-* Update image variable and add tests to Jenkinsfile
-
+You can obtain the current version of this image by using `podman pull docker.io/ucsb/seeds:latest`
