@@ -39,7 +39,7 @@ pipeline {
                     steps {
                         container('podman') {
                             sh 'podman run -it --rm --pull=never localhost/$IMAGE_NAME which rstudio'
-                            sh 'podman run -it --rm --pull=never localhost/$IMAGE_NAME R -q -e "getRversion() >= \\"4.1.3\\"" | tee /dev/stderr | grep -q "TRUE"'
+                            sh 'podman run -it --rm --pull=never localhost/$IMAGE_NAME R -q -e "getRversion() >= \\"4.5.2\\"" | tee /dev/stderr | grep -q "TRUE"'
                             sh 'podman run -it --rm --pull=never localhost/$IMAGE_NAME R -e "library(\"corrplot\");library(\"dplyr\");library(\"caret\");library(\"e1071\");library(\"gbm3\");library(\"ggplot2\");library(\"lubridate\");library(\"MASS\");library(\"psych\");library(\"randomForest\");library(\"RColorBrewer\");library(\"reshape2\");library(\"ROCR\");library(\"rpart\");library(\"scales\");library(\"tidyr\")"'
                             sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import matplotlib; import matplotlib.pyplot as pyplot ; import numpy; import pandas; import pickle; import seaborn; import sklearn; sklearn.show_versions(); import time"'
                             sh 'podman run -d --name=$IMAGE_NAME --rm --pull=never -p 8888:8888 localhost/$IMAGE_NAME start-notebook.sh --NotebookApp.token="jenkinstest"'
